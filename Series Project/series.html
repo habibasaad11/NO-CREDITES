@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CINEMA+ . Series</title>
+
+    <link rel="stylesheet" href="series.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+
+<body>
+
+
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <a class="brand" href="../index.html" aria-label="NoCredits home">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" role="img" aria-label="NoCredits logo">
+                        <defs>
+                            <linearGradient id="brandGlow" x1="0%" x2="100%" y1="0%" y2="100%">
+                                <stop offset="0%" stop-color="#77f3e5"/>
+                                <stop offset="55%" stop-color="#29d1d1"/>
+                                <stop offset="100%" stop-color="#00a6a6"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="32" cy="32" r="28" fill="url(#brandGlow)"/>
+                        <path d="M17 46V18h7.5l13.5 18.5V18H46v28h-7.8L24.5 27.5V46H17Z" fill="#051015"/>
+                    </svg>
+                </span>
+                <span class="brand-name">No<span>Credits</span></span>
+            </a>
+            <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+                <a class="nav-link" href="../index.html">Home</a>
+                <a class="nav-link" href="../movies.html">Movies</a>
+                <a class="nav-link active" href="series.html">Series</a>
+                <a class="nav-link" href="../my-list.html">My List</a>
+            </nav>
+            <div class="header-actions">
+                <label class="header-search-box">
+                    <span class="search-icon" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="7"></circle>
+                            <path d="m20 20-4-4"></path>
+                        </svg>
+                    </span>
+                    <input id="headerSearchInput" type="search" placeholder="Search movies, series..." aria-label="Search movies and series" />
+                </label>
+                <div class="language-picker" id="languagePicker">
+                    <button class="language-button" id="languageButton" type="button" aria-label="Choose language" aria-expanded="false">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="9"></circle>
+                            <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path>
+                        </svg>
+                        <span id="selectedLanguage">EN</span>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </button>
+                    <ul class="language-menu" id="languageMenu" aria-label="Language options">
+                        <li><button class="language-option" type="button" data-lang="ar">العربية</button></li>
+                        <li><button class="language-option active" type="button" data-lang="en">English</button></li>
+                        <li><button class="language-option" type="button" data-lang="fr">Français</button></li>
+                    </ul>
+                </div>
+                <button class="login-button" id="loginButton" type="button">
+                    Log in
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M13 6l6 6-6 6"></path>
+                    </svg>
+                </button>
+                <button class="menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false">
+                    <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 7h16M4 12h16M4 17h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <header class="series-header">
+
+        <p class="small-title">CINEMA+ COLLECTION</p>
+
+        <h2>Popular Series</h2>
+
+        <p>
+            Discover the best foreign, horror, action and drama series.
+        </p>
+
+    </header>
+
+
+    <section class="search-section">
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="seriesSearchInput"
+                placeholder="Search for a series..."
+            >
+
+            <button id="searchBtn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="genres">
+
+        <button class="genre active" data-genre="All">
+            All
+        </button>
+
+        <button class="genre" data-genre="Drama">
+            Drama
+        </button>
+
+        <button class="genre" data-genre="Horror">
+            Horror
+        </button>
+
+        <button class="genre" data-genre="Action">
+            Action
+        </button>
+
+        <button class="genre" data-genre="Comedy">
+            Comedy
+        </button>
+
+        <button class="genre" data-genre="Sci-Fi">
+            Sci-Fi
+        </button>
+
+    </section>
+
+
+    <main class="series-container" id="seriesContainer">
+
+        <!-- The Vampire Diaries -->
+        <div class="series-card"
+             data-title="The Vampire Diaries"
+             data-genre="Drama">
+
+            <div class="card-image">
+
+                <img src="jpg/The Vampire Diaries.webp"
+                     alt="The Vampire Diaries">
+
+                <span class="rating">★ 8.4</span>
+
+            </div>
+
+            <div class="card-info">
+
+                <h3>The Vampire Diaries</h3>
+
+                <p>2009 • Drama</p>
+
+                <a href="details1.html?series=vampire-diaries"
+                      class="details-btn">
+                      View Details
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Pretty Little Liars -->
+        <div class="series-card"
+             data-title="Pretty Little Liars"
+             data-genre="Drama">
+
+            <div class="card-image">
+
+                <img src="jpg/Pretty Little Liars.webp"
+                     alt="Pretty Little Liars">
+
+                <span class="rating">★ 7.4</span>
+
+            </div>
+
+            <div class="card-info">
+
+                <h3>Pretty Little Liars</h3>
+
+                <p>2010 • Drama</p>
+
+                <a href="details1.html?series=pretty-little-liars"
+                  class="details-btn">
+                   View Details
+                </a>
+
+            </div>
+
+        </div>
+        
+
+
+        <!-- I Will Find You -->
+        <div class="series-card"
+             data-title="I Will Find You"
+             data-genre="Drama">
+
+            <div class="card-image">
+
+                <img src="jpg/I Will Find You.webp"
+                     alt="I Will Find You">
+
+                <span class="rating">★ 7.8</span>
+
+            </div>
+
+            <div class="card-info">
+
+                <h3>I Will Find You</h3>
+
+                <p>2024 • Drama</p>
+
+               <a href="details1.html?series=i will find you">
+                View details
+               </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Wednesday -->
+        <div class="series-card"
+             data-title="Wednesday"
+             data-genre="Sci-Fi">
+
+            <div class="card-image">
+
+                <img src="jpg/Wednesday.webp"
+                     alt="Wednesday">
+
+                <span class="rating">★ 8.0</span>
+
+            </div>
+
+            <div class="card-info">
+
+                <h3>Wednesday</h3>
+
+                <p>2022 • Sci-Fi</p>
+
+                <a href="details1.html?series=wednesday">
+                    View Details
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Friends -->
+        <div class="series-card"
+             data-title="Friends"
+             data-genre="Comedy">
+
+            <div class="card-image">
+
+                <img src="jpg/friends.webp"
+                     alt="Friends">
+
+                <span class="rating">★ 8.9</span>
+
+            </div>
+
+            <div class="card-info">
+
+                <h3>Friends</h3>
+
+                <p>1994 • Comedy</p>
+
+                <a href="details1.html?series=friends">
+                    View Details
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- The Walking Dead -->
+        <div class="series-card"
+             data-title="The Walking Dead"
+             data-genre="Horror">
+
+            <div class="card-image">
+
+                <img src="jpg/The Walking Dead.webp"
+                     alt="The Walking Dead">
+
+                <span class="rating">★ 8.1</span>
+
+            </div>
+
+            <div class="card-info">
+
+                <h3>The Walking Dead</h3>
+
+                <p>2010 • Horror</p>
+
+                <a href="details.html?series=walking-dead">
+                    View Details
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Money Heist -->
+        <div class="series-card"
+             data-title="Money Heist"
+             data-genre="Action">
+
+            <div class="card-image">
+
+                <img src="jpg/Money Heist.webp"
+                     alt="Money Heist">
+
+                <span class="rating">★ 8.2</span>
+
+            </div>
+
+            <div class="card-info">
+
+                <h3>Money Heist</h3>
+
+                <p>2017 • Action</p>
+
+                <a href="details1.html?series=money-heist">
+                    View Details
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- No Results -->
+    <p id="noResults">
+        No series found.
+    </p>
+
+
+    <!-- Contact -->
+    <section class="contact-section" id="contact">
+
+        <div class="contact-content">
+
+            <p class="small-title">CONTACT US</p>
+
+            <h2>Send a Message</h2>
+
+            <p>
+                Have a suggestion? Send us a message.
+            </p>
+
+            <textarea
+                id="message"
+                placeholder="Enter your message..."
+            ></textarea>
+
+            <button id="submitBtn">
+                Submit
+            </button>
+
+            <p id="messageResult"></p>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 CINEMA+. All Rights Reserved.
+        </p>
+
+        <p>
+            Designed & Developed by
+            <span>Salwa Mohamed</span>
+        </p>
+
+    </footer>
+
+
+    <script src="series.js"></script>
+
+</body>
+</html>
+
