@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Movie Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="details.css">
+</head>
+<body>
+<header class="site-header" id="siteHeader">
+    <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="NoCredits home">
+            <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 64 64" role="img" aria-label="NoCredits logo">
+                    <defs>
+                        <linearGradient id="brandGlow" x1="0%" x2="100%" y1="0%" y2="100%">
+                            <stop offset="0%" stop-color="#77f3e5"/>
+                            <stop offset="55%" stop-color="#29d1d1"/>
+                            <stop offset="100%" stop-color="#00a6a6"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="32" cy="32" r="28" fill="url(#brandGlow)"/>
+                    <path d="M17 46V18h7.5l13.5 18.5V18H46v28h-7.8L24.5 27.5V46H17Z" fill="#051015"/>
+                </svg>
+            </span>
+            <span class="brand-name">No<span>Credits</span></span>
+        </a>
+        <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link active" href="movies.html">Movies</a>
+            <a class="nav-link" href="Series Project/series.html">Series</a>
+            <a class="nav-link" href="my-list.html">My List</a>
+        </nav>
+        <div class="header-actions">
+            <label class="header-search-box">
+                <span class="search-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path d="m20 20-4-4"></path>
+                    </svg>
+                </span>
+                <input id="headerSearchInput" type="search" placeholder="Search movies, series..." aria-label="Search movies and series" />
+            </label>
+            <div class="language-picker" id="languagePicker">
+                <button class="language-button" id="languageButton" type="button" aria-label="Choose language" aria-expanded="false">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path>
+                    </svg>
+                    <span id="selectedLanguage">EN</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m9 18 6-6-6-6"></path>
+                    </svg>
+                </button>
+                <ul class="language-menu" id="languageMenu" aria-label="Language options">
+                    <li><button class="language-option" type="button" data-lang="ar">العربية</button></li>
+                    <li><button class="language-option active" type="button" data-lang="en">English</button></li>
+                    <li><button class="language-option" type="button" data-lang="fr">Français</button></li>
+                </ul>
+            </div>
+            <button class="login-button" id="loginButton" type="button">
+                Log in
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6"></path>
+                </svg>
+            </button>
+            <button class="menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false">
+                <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 7h16M4 12h16M4 17h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+<main>
+
+    <section class="movie-hero">
+
+        <div
+            class="hero-background"
+            id="heroBackground"
+        ></div>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <div class="poster-wrapper">
+
+                <img
+                    id="moviePoster"
+                    src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"
+                    alt="Movie Poster"
+                >
+
+            </div>
+
+            <div class="movie-details">
+
+
+                <p class="category-label">
+                    FEATURED MOVIE
+                </p>
+
+
+                <h1 id="movieTitle">
+                    Interstellar
+                </h1>
+
+                <div class="movie-meta">
+
+                    <span class="rating">
+                        ⭐
+                        <strong id="movieRating">
+                            8.7
+                        </strong>
+                    </span>
+
+                    <span class="separator">
+                        •
+                    </span>
+
+                    <span id="movieYear">
+                        2014
+                    </span>
+
+                    <span class="separator">
+                        •
+                    </span>
+
+                    <span id="movieDuration">
+                        2h 49m
+                    </span>
+
+                </div>
+
+                <div
+                    class="genres"
+                    id="movieGenres"
+                >
+
+                    <span>
+                        Sci-Fi
+                    </span>
+
+                    <span>
+                        Adventure
+                    </span>
+
+                    <span>
+                        Drama
+                    </span>
+
+                </div>
+
+
+                <p
+                    class="description"
+                    id="movieDescription"
+                >
+
+                    A team of explorers travel through a wormhole
+                    in space in an attempt to ensure humanity's
+                    survival.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <button
+                        class="btn-primary"
+                        id="trailerBtn"
+                    >
+                        <span>▶</span>
+                        Watch Trailer
+                    </button>
+
+
+                    <button
+                        class="btn-secondary"
+                        id="favoriteBtn"
+                    >
+                        <span id="favoriteIcon">
+                            ♡
+                        </span>
+
+                        Add to List
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+    <section class="content-section">
+
+
+        <div class="information-grid">
+            <div class="info-column">
+
+                <p class="section-label">
+                    ABOUT
+                </p>
+
+                <h2>
+                    About the Movie
+                </h2>
+
+                <p id="aboutMovie">
+
+                    Interstellar follows a group of astronauts
+                    who travel through a wormhole near Saturn
+                    in search of a new home for humanity.
+
+                </p>
+
+            </div>
+
+            <div class="info-column">
+
+                <p class="section-label">
+                    DETAILS
+                </p>
+
+                <h2>
+                    Movie Information
+                </h2>
+
+
+                <div class="info-list">
+
+
+                    <div class="info-item">
+
+                        <span>
+                            Director
+                        </span>
+
+                        <strong id="director">
+                            Christopher Nolan
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>
+                            Release Date
+                        </span>
+
+                        <strong id="releaseDate">
+                            November 7, 2014
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>
+                            Language
+                        </span>
+
+                        <strong>
+                            English
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>
+                            Country
+                        </span>
+
+                        <strong>
+                            USA
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <section class="content-section">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="section-label">
+                    CAST
+                </p>
+
+                <h2>
+                    Meet the Cast
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="cast-grid">
+
+
+            <div class="cast-card">
+
+                <div class="cast-image">
+
+                    <img
+                        src="https://media.themoviedb.org/t/p/w600_and_h900_face/lCySuYjhXix3FzQdS4oceDDrXKI.jpg"
+                        alt="Matthew McConaughey"
+                    >
+
+                </div>
+
+                <div class="cast-info">
+
+                    <h3>
+                        Matthew McConaughey
+                    </h3>
+
+                    <p>
+                        Cooper
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="cast-card">
+
+                <div class="cast-image">
+
+                    <img
+                        src="https://media.themoviedb.org/t/p/w600_and_h900_face/nbccV2pMoyLTCeg5DQip24Eq0Jp.jpg"
+                        alt="Anne Hathaway"
+                    >
+
+                </div>
+
+                <div class="cast-info">
+
+                    <h3>
+                        Anne Hathaway
+                    </h3>
+
+                    <p>
+                        Amelia Brand
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Cast 3 -->
+
+            <div class="cast-card">
+
+                <div class="cast-image">
+
+                    <img
+                        src="https://media.themoviedb.org/t/p/w600_and_h900_face/eQKnihReJeB9vQEa5gySzAlKfZt.jpg"
+                        alt="Jessica Chastain"
+                    >
+
+                </div>
+
+                <div class="cast-info">
+
+                    <h3>
+                        Jessica Chastain
+                    </h3>
+
+                    <p>
+                        Murph
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="cast-card">
+
+                <div class="cast-image">
+
+                    <img
+                        src="https://media.themoviedb.org/t/p/w600_and_h900_face/bVZRMlpjTAO2pJK6v90buFgVbSW.jpg"
+                        alt="Michael Caine"
+                    >
+
+                </div>
+
+                <div class="cast-info">
+
+                    <h3>
+                        Michael Caine
+                    </h3>
+
+                    <p>
+                        Professor Brand
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+    <section class="content-section similar-section">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="section-label">
+                    DISCOVER MORE
+                </p>
+
+                <h2>
+                    You May Also Like
+                </h2>
+
+            </div>
+
+
+            <a
+                href="movies.html"
+                class="see-all"
+            >
+                See All →
+            </a>
+
+        </div>
+
+
+        <div class="similar-grid">
+            <div
+                class="similar-card"
+                onclick="openMovie(2)"
+            >
+
+                <div class="similar-poster">
+
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg"
+                        alt="Inception"
+                    >
+
+                    <span class="similar-rating">
+                        ⭐ 8.8
+                    </span>
+
+                </div>
+
+                <div class="similar-info">
+
+                    <h3>
+                        Inception
+                    </h3>
+
+                    <p>
+                        2010 • Sci-Fi
+                    </p>
+
+                </div>
+
+            </div>
+            <div
+                class="similar-card"
+                onclick="openMovie(3)"
+            >
+
+                <div class="similar-poster">
+
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg"
+                        alt="Dune Part Two"
+                    >
+
+                    <span class="similar-rating">
+                        ⭐ 8.6
+                    </span>
+
+                </div>
+
+                <div class="similar-info">
+
+                    <h3>
+                        Dune: Part Two
+                    </h3>
+
+                    <p>
+                        2024 • Sci-Fi
+                    </p>
+
+                </div>
+
+            </div>
+            <div
+                class="similar-card"
+                onclick="openMovie(4)"
+            >
+
+                <div class="similar-poster">
+
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg"
+                        alt="The Batman"
+                    >
+
+                    <span class="similar-rating">
+                        ⭐ 7.8
+                    </span>
+
+                </div>
+
+                <div class="similar-info">
+
+                    <h3>
+                        The Batman
+                    </h3>
+
+                    <p>
+                        2022 • Action
+                    </p>
+
+                </div>
+
+            </div>
+            <div
+                class="similar-card"
+                onclick="openMovie(5)"
+            >
+
+                <div class="similar-poster">
+
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/kyeqWdyUXW608qlYkRqosgbbJyK.jpg"
+                        alt="Avatar"
+                    >
+
+                    <span class="similar-rating">
+                        ⭐ 7.8
+                    </span>
+
+                </div>
+
+                <div class="similar-info">
+
+                    <h3>
+                        Avatar
+                    </h3>
+
+                    <p>
+                        2009 • Fantasy
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</main>
+<div
+    class="modal"
+    id="trailerModal"
+>
+
+    <div class="modal-content">
+
+
+        <button
+            class="close-modal"
+            id="closeModal"
+        >
+            ×
+        </button>
+
+
+        <div class="trailer-placeholder">
+
+            <div class="play-circle">
+                ▶
+            </div>
+
+            <h2>
+                Movie Trailer
+            </h2>
+
+            <p>
+                Trailer preview
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+<footer class="footer">
+
+
+    <div class="footer-content">
+
+
+        <div class="footer-brand">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                <span>
+                    Cine<span class="logo-accent">
+                        Verse
+                    </span>
+                </span>
+
+            </a>
+
+
+            <p>
+                Your world of movies & series.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="movies.html">
+                Movies
+            </a>
+
+            <a href="series.html">
+                Series
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+           
+        </p>
+
+    </div>
+
+
+</footer>
+
+
+<script src="details.js"></script>
+
+</body>
+
+</html>
